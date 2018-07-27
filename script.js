@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Redmine Story Point Display
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Shows the sum of Story Points in columns which contains subtasks
 // @author       Marc Bohm
 // @match        http://tampermonkey.net/index.php?version=4.6&ext=dhdg&updated=true
 // @grant        none
+// @updateUrl    https://github.com/jsnx/redmine_storypoints_calc/blob/master/script.js
 // ==/UserScript==
 (function() {
     'use strict';
