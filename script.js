@@ -14,9 +14,8 @@
     setTimeout(function() {
 
             var tickets_in_ready_for_dev;
-            var storypoints
+            var storypoints;
             var backlog = [];
-            var tickets_in_bereit_fuer_entwicklung;
             var child_container;
             var backlog_bereit_fuer_entwicklung = [];
             var backlog_bearbeiten = [];
@@ -47,6 +46,8 @@
             calculate_backlog_points(backlog_bereit_fuer_entwicklung);
             calculate_backlog_points(backlog_bearbeiten);
 
+//======================== functions =====================//
+
             // build array of tickets of column "Bereit für Entwicklung" und "bearbeiten"
             function build_backlogs(column_name) {
                 //build querySelector
@@ -75,6 +76,7 @@
                 }
             };
 
+
             function remove_duplicates(original_backlog, column_backlog) {
               for (i = 0; i < original_backlog.length; i++) {
 
@@ -85,11 +87,12 @@
                          original_backlog.splice(i,1);
                          --i;
                       }
-                    
+
                   }
 
               }
             }
+
 
             //calcuate points in "Bereit für Entwicklung"
             function calculate_backlog_points(backlog_array) {
@@ -108,6 +111,8 @@
                     html = endresult[0].innerText;
                     endresult[0].innerText += (" " + storypoints_second_row);
                 }
+
+                storypoints_second_row = 0;
             }
         },
         5500);
