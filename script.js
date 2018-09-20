@@ -101,15 +101,26 @@
                         storypoints_second_row = storypoints_second_row + parseInt(backlog_array[i][1]);
                     }
                 }
+
                 //write to column header
                 if (backlog_array == backlog_bereit_fuer_entwicklung) {
+                  try{
                     var endresult = document.querySelectorAll("#scrum-sprint-container > div.agile > div > div.easy-col.col1.agile__main-col.agile__col > div > div > div > div.agile__col.sprint-col.col0 > div.agile__col__title.sticky > div > span.agile__col__title__details")
                     var html = endresult[0].innerText;
                     endresult[0].innerText += (" " + storypoints_second_row);
+                  }
+                  catch(err){
+                    console.log(err);
+                  }
                 } else {
+                  try{
                     endresult = document.querySelectorAll("#scrum-sprint-container > div.agile > div > div.easy-col.col1.agile__main-col.agile__col > div > div > div > div.agile__col.sprint-col.col1 > div.agile__col__title.sticky > div > span.agile__col__title__details")
                     html = endresult[0].innerText;
                     endresult[0].innerText += (" " + storypoints_second_row);
+                  }
+                  catch(err){
+                    console.log(err);
+                  }
                 }
 
                 storypoints_second_row = 0;
